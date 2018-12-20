@@ -84,19 +84,11 @@ def classifier(testDataSet, trainDataSet, K):
     print('correct rate is: ', correctRate)
 
 
-with open("./files/knn/full_data.txt", encoding="utf-8", mode="r") as f:
+with open("./full_data.txt", encoding="utf-8", mode="r") as f:
     init_data_set = f.readlines()
     for i in range(10):
         trainDataSet, testDataSet = loaddata(i, init_data_set, 10)
         classifier(testDataSet, trainDataSet, 5)
 
-    # testData = []
-    # testLabels = []
-    # for data in init_data_set:
-    #     data = data.strip("\n").split("\t")
-    #     for i in range(len(data)):
-    #         data[i] = str2float(data[i])
-    #     testData.append(data[:2])
-    #     testLabels.append(data[2])
 
 
